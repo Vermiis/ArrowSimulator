@@ -9,11 +9,11 @@ namespace ConsoleClient
 {
     class OpenConnection
     {
-        public static string Send(String server, String message)
+        public static string Send(String server, String message, Int32 port)
         {
             try
             {
-                Int32 port = 2222;
+                
                 TcpClient client = new TcpClient(server, port);
 
                 // Translate the passed message into ASCII and store it as a Byte array.
@@ -42,11 +42,11 @@ namespace ConsoleClient
                 return ("SocketException:"+ e);
             }
         }
-        public static void Receive(String server, String message)
+        public static string Receive(String server, String message, Int32 port)
         {
             try
             {
-                Int32 port = 13000;
+               
                 TcpClient client = new TcpClient(server, port);
                 NetworkStream stream = client.GetStream();
                 Byte[] data = System.Text.Encoding.ASCII.GetBytes(message);
@@ -61,18 +61,18 @@ namespace ConsoleClient
                 // Read the first batch of the TcpServer response bytes.
                 Int32 bytes = stream.Read(data, 0, data.Length);
                 responseData = System.Text.Encoding.ASCII.GetString(data, 0, bytes);
-                Console.WriteLine("Received: {0}", responseData);
+                return ("Received:"+ responseData);
             }
             catch (ArgumentNullException e)
             {
-                Console.WriteLine("ArgumentNullException: {0}", e);
+                return ("ArgumentNullException:"+ e);
             }
             catch (SocketException e)
             {
-                Console.WriteLine("SocketException: {0}", e);
+                return ("SocketException:" + e);
             }
         }
-        static void Connect(String server, String message)
+        static void Connect(String server, String message, Int32 port)
         {
             try
             {
@@ -80,7 +80,7 @@ namespace ConsoleClient
                 // Note, for this client to work you need to have a TcpServer 
                 // connected to the same address as specified by the server, port
                 // combination.
-                Int32 port = 13000;
+                
                 TcpClient client = new TcpClient(server, port);
 
                 // Translate the passed message into ASCII and store it as a Byte array.

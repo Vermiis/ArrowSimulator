@@ -64,8 +64,9 @@ namespace ConsoleClient
         }
         static void Main(string[] args)
         {
-            OpenConnection.Send("server.next.biz.pl", "09 64 40 1E 10 78 29 00 00 5A 65 3E 59 30 30 30 30 0D 74 00 00 00 00 14 00 00 00 37 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 BF");
-            //Connect("server.next.biz.pl", "09 64 40 1E 10 78 29 00 00 5A 65 3E 59 30 30 30 30 0D 74 00 00 00 00 14 00 00 00 37 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 BF");
+
+            Console.WriteLine(OpenConnection.Send("server.next.biz.pl", "09 0A 40 01 10 78 29 00 00 1D 00 00 00 30 30 30 30 48", 2222));
+            Connect("server.next.biz.pl", "7E 09 64 40 1A 10 78 29 00 00 28 65 3E 59 30 30 30 30 0E 73 00 00 00 00 14 00 00 00 36 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 39 7F");
         }
     }
 }
