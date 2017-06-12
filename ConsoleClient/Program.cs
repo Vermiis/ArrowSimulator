@@ -5,11 +5,11 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ArrowSimulator
+namespace ConsoleClient
 {
-    class Connect
+    class Program
     {
-        static void ConnectTo(String server, String message, Int32 port)
+        static void Connect(String server, String message)
         {
             try
             {
@@ -17,7 +17,7 @@ namespace ArrowSimulator
                 // Note, for this client to work you need to have a TcpServer 
                 // connected to the same address as specified by the server, port
                 // combination.
-                
+                Int32 port = 2222;
                 TcpClient client = new TcpClient(server, port);
 
                 // Translate the passed message into ASCII and store it as a Byte array.
@@ -30,7 +30,6 @@ namespace ArrowSimulator
 
                 // Send the message to the connected TcpServer. 
                 stream.Write(data, 0, data.Length);
-                
 
                 Console.WriteLine("Sent: {0}", message);
 
@@ -62,6 +61,11 @@ namespace ArrowSimulator
 
             Console.WriteLine("\n Press Enter to continue...");
             Console.Read();
+        }
+        static void Main(string[] args)
+        {
+            OpenConnection.Send("server.next.biz.pl", "09 64 40 1E 10 78 29 00 00 5A 65 3E 59 30 30 30 30 0D 74 00 00 00 00 14 00 00 00 37 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 BF");
+            //Connect("server.next.biz.pl", "09 64 40 1E 10 78 29 00 00 5A 65 3E 59 30 30 30 30 0D 74 00 00 00 00 14 00 00 00 37 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 BF");
         }
     }
 }
