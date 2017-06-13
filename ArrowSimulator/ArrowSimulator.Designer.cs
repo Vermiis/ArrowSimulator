@@ -34,6 +34,7 @@
             this.txtBoxLOG = new System.Windows.Forms.RichTextBox();
             this.cmbxSigs = new System.Windows.Forms.ComboBox();
             this.btnSendSig = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtbServerAddr
@@ -90,11 +91,19 @@
             this.btnSendSig.Text = "Send";
             this.btnSendSig.UseVisualStyleBackColor = true;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(151, 100);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(63, 20);
+            this.textBox1.TabIndex = 7;
+            // 
             // ArrowSimulator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(596, 457);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnSendSig);
             this.Controls.Add(this.cmbxSigs);
             this.Controls.Add(this.txtBoxLOG);
@@ -116,6 +125,7 @@
         private System.Windows.Forms.RichTextBox txtBoxLOG;
         private System.Windows.Forms.ComboBox cmbxSigs;
         private System.Windows.Forms.Button btnSendSig;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
