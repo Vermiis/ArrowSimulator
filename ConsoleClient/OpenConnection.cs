@@ -14,24 +14,14 @@ namespace ConsoleClient
             try
             {
                 
-                TcpClient client = new TcpClient(server, port);
-
-                // Translate the passed message into ASCII and store it as a Byte array.
-                Byte[] data = System.Text.Encoding.ASCII.GetBytes(message);
-
-                // Get a client stream for reading and writing.
-                //  Stream stream = client.GetStream();
-
-                NetworkStream stream = client.GetStream();
-
-                // Send the message to the connected TcpServer. 
+                TcpClient client = new TcpClient(server, port);           
+                Byte[] data = System.Text.Encoding.ASCII.GetBytes(message);             
+                NetworkStream stream = client.GetStream();            
                 stream.Write(data, 0, data.Length);
-
                 var a= ("Sent:" + message);
                 stream.Close();
                 client.Close();
-                return a;
-                
+                return a;               
             }
             catch (ArgumentNullException e)
             {
