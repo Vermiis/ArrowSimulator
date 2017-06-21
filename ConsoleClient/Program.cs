@@ -67,7 +67,9 @@ namespace ConsoleClient
 
             Console.WriteLine(OpenConnection.Send("server.next.biz.pl", "~	S@x)í?Y0000868326023068232Arrow 101 SOLO Next s.c.164.126.114.226QM10FAR01A02X", 2222));
             Console.WriteLine(OpenConnection.Receive("server.next.biz.pl", "~	S@x)í?Y0000868326023068232Arrow 101 SOLO Next s.c.164.126.114.226QM10FAR01A02X", 2222));
+            Listener.Listen();
             Connect("server.next.biz.pl", "~	x)@¶ìX0000");
+            Listener.Listen();
         }
     }
 }
